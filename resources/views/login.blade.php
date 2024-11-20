@@ -1,53 +1,28 @@
-@extends('app')
-@section('content')
-@if(session('success'))
-    <h1>{{session('success')}}</h1>
-    
-
-    
-@endif
-
-
-<main class="login-form">
-    <div class="cotainer">
-        <div class="row justify-content-center">
-            <div class="col-md-4">
-                <div class="card">
-                <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-                <script src="{{ asset('js/app.js') }}"></script>
-
-                    <h3 class="card-header text-center">Formulario Login</h3>
-                    <div class="card-body">
-                        <form method="POST" action="{{route('login.post')}}">
-                            @csrf
-                            <div class="form-group mb-3">
-                                <input type="text" placeholder="Email" id="email" class="form-control" name="email" autocomplete="email" required>
-                                @if ($errors->has('email'))
-                                <span class="text-danger">{{ $errors->first('email') }}</span>
-                                @endif
-                            </div>
-                            <div class="form-group mb-3">
-                                <input type="password" placeholder="Password" id="password" class="form-control" name="password" required>
-                                @if ($errors->has('password'))
-                                <span class="text-danger">{{ $errors->first('password') }}</span>
-                                @endif
-                            </div>
-                            <div class="form-group mb-3">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember"> Recuerdame
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="d-grid mx-auto">
-                            <button type="submit" class="btn btn-dark btn-block">Enviar</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('/images/christmas-background.jpg');
+            background-size: cover;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center mt-5">
+        <h1>¡Bienvenido a nuestra historia interactiva!</h1>
+        <form action="/dashboard" method="GET">
+            <div class="mb-3">
+                <input type="email" name="email" class="form-control" placeholder="Correo electrónico" required>
             </div>
-        </div>
+            <div class="mb-3">
+                <input type="password" name="password" class="form-control" placeholder="Contraseña" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+        </form>
     </div>
-</main>
-
-@endsection
+</body>
+</html>
