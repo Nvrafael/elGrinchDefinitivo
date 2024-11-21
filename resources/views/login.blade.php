@@ -2,17 +2,22 @@
 <html lang="en">
 <head>
     <title>Login</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
-        body {
-            background-image: url('/images/christmas-background.jpg');
-            background-size: cover;
-            color: white;
-        }
-    </style>
+    body {
+        background-image: url('asset/img/fondo');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh; /* Asegura que cubra toda la ventana */
+        margin: 0;
+    }
+</style>
 </head>
 <body>
-    <div class="container text-center mt-5">
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="text-center">
         <h1>¡Bienvenido a nuestra historia interactiva!</h1>
         <form action="/dashboard" method="GET">
             <div class="mb-3">
@@ -24,5 +29,6 @@
             <button type="submit" class="btn btn-primary">Iniciar sesión</button>
         </form>
     </div>
+</div>
 </body>
 </html>
